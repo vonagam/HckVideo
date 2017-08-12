@@ -1,0 +1,16 @@
+.DS_Store
+
+/_build
+/db
+/deps
+/*.ez
+erl_crash.dump
+
+npm-debug.log
+node_modules
+
+.vscode
+
+/priv/static/assets
+/config/*.secret.exs
+/assets/source/routes.js

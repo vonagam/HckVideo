@@ -1,0 +1,7 @@
+<div id="REACT-ROOT"></div>
+
+<script>
+
+  console.log( <%= { :safe, Poison.encode!( add_json_layout( assigns, @json ) ) } %> )
+
+</script>
