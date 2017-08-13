@@ -31,13 +31,15 @@ module.exports = function ( { isDev } ) {
 
           plugins: _.compact( [
 
-            require( 'babel-plugin-syntax-dynamic-import' )(),
+            [ require( 'babel-plugin-syntax-dynamic-import' ) ],
 
-            require( 'babel-plugin-transform-class-properties' )( { spec: true } ),
+            [ require( 'babel-plugin-transform-class-properties' ), { spec: true } ],
 
-            require( 'babel-plugin-lodash' ),
+            [ require( 'babel-plugin-lodash' ) ],
 
-            isDev && require( 'react-hot-loader/babel' ),
+            isDev && [ require( 'react-hot-loader/babel' ) ],
+
+            [ require( 'babel-plugin-import' ), { libraryName: 'antd', style: 'css' } ],
 
           ] ),
 

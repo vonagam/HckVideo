@@ -63,6 +63,14 @@ defmodule Phx.Mixfile do
 
         { :ex_admin, github: "smpallen99/ex_admin" },
 
+        { :inflex, "~> 1.8.1" },
+
+        { :exfile, github: "keichan34/exfile", override: true },
+
+        { :exfile_imagemagick, github: "keichan34/exfile-imagemagick" },
+
+        { :csv, "~> 2.0.0" },
+
       ],
 
     ]

@@ -30,7 +30,7 @@ defmodule PhxWeb.Router do
   end
 
 
-  scope "/" do
+  scope "/auth" do
 
     pipe_through( [ :browser, :public ] )
 
@@ -38,7 +38,7 @@ defmodule PhxWeb.Router do
 
   end
 
-  scope "/" do
+  scope "/auth" do
 
     pipe_through( [ :browser, :protected ] )
 
@@ -50,7 +50,11 @@ defmodule PhxWeb.Router do
 
     pipe_through( [ :browser, :public ] )
 
-    get( "/", PageController, :index )
+    get( "/", VideoController, :search )
+
+    # get( "/subj/:type/:id", VideoController, :subject )
+
+    # get( "/submit" )
 
   end
 
@@ -68,10 +72,12 @@ defmodule PhxWeb.Router do
 
   scope "/admin", ExAdmin do
 
-    pipe_through( [ :browser ] )
+    pipe_through( [ :browser, :protected ] )
 
     admin_routes()
 
   end
+
+  forward( "/attachments", Exfile.Router )
 
 end

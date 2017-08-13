@@ -1,8 +1,8 @@
 defmodule PhxWeb.Authentication do
 
-  def current_user(conn) do
+  def current_user( conn ) do
 
-    Coherence.current_user(conn)
+    Coherence.current_user( conn )
 
   end
 

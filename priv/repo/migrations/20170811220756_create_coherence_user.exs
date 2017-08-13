@@ -59,7 +59,7 @@ defmodule Phx.Repo.Migrations.CreateCoherenceUser do
 
     end
 
-    create( unique_index( :users, [ :email ] ) )
+    create( index( :users, [ :email ], unique: true ) )
 
 
     create table( :rememberables ) do
@@ -82,7 +82,7 @@ defmodule Phx.Repo.Migrations.CreateCoherenceUser do
 
     create( index( :rememberables, [ :token_hash ] ) )
 
-    create( unique_index( :rememberables, [ :user_id, :series_hash, :token_hash ] ) )
+    create( index( :rememberables, [ :user_id, :series_hash, :token_hash ], unique: true ) )
 
 
     create table( :invitations ) do
@@ -97,7 +97,7 @@ defmodule Phx.Repo.Migrations.CreateCoherenceUser do
 
     end
 
-    create( unique_index( :invitations, [ :email ] ) )
+    create( index( :invitations, [ :email ], unique: true ) )
 
     create( index( :invitations, [ :token ] ) )
 

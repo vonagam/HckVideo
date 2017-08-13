@@ -12,6 +12,11 @@ defmodule PhxWeb.LayoutView do
 
   defp add_json_layout( %{ conn: conn } = assigns, view ) do
 
+    # require IEx
+
+    # IEx.pry()
+
+
     error = assigns[ :kind ] == :error
 
 
@@ -56,7 +61,7 @@ defmodule PhxWeb.LayoutView do
 
       # locale
 
-      # user
+      user: if( user = current_user( conn ), do: %{ id: user.id, name: user.name } ),
 
       view: view,
 
@@ -158,6 +163,13 @@ defmodule PhxWeb.LayoutView do
   defp fetch_cache( key, fun ) do
 
     Cachex.get!( :layout_view, key, fallback: fn( _key ) -> fun.() end )
+
+  end
+
+
+  defp get_options do
+
+    Phx.Models.get_options()
 
   end
 

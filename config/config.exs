@@ -39,7 +39,7 @@ config( :phx, :jsroutes,
 
   exclude: ~r{/admin},
 
-  output_folder: "assets/source",
+  output_folder: "assets/source/scripts",
 
   output_file: "routes.js",
 
@@ -101,13 +101,37 @@ config( :ex_admin,
 
     PhxWeb.ExAdmin.Dashboard,
 
+    PhxWeb.ExAdmin.Coherence.User,
+
+    PhxWeb.ExAdmin.Models.Video,
+
+    PhxWeb.ExAdmin.Models.City,
+
+    PhxWeb.ExAdmin.Models.Type,
+
+    PhxWeb.ExAdmin.Models.Group,
+
+    PhxWeb.ExAdmin.Models.Person,
+
   ],
+
+  field_type_matching: %{
+
+    Exfile.Ecto.File => :file,
+
+  },
 
 )
 
 config( :xain,
 
   after_callback: { Phoenix.HTML, :raw },
+
+)
+
+config( :exfile, Exfile,
+
+  secret: "not nil",
 
 )
 

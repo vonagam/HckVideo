@@ -35,6 +35,8 @@ defmodule PhxWeb do
 
       import Phoenix.Controller, except: [ render: 2, render: 3, render: 4 ]
 
+      import Exfile.Phoenix.Helpers
+
       import PhxWeb.Router.Helpers
 
       import PhxWeb.ErrorHelpers
@@ -42,6 +44,8 @@ defmodule PhxWeb do
       import PhxWeb.ReactHelpers
 
       import PhxWeb.Gettext
+
+      import PhxWeb.Authentication
 
     end
 

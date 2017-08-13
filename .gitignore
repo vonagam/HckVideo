@@ -13,4 +13,4 @@ node_modules
 
 /priv/static/assets
 /config/*.secret.exs
-/assets/source/routes.js
+/assets/source/scripts/routes.js

@@ -9,7 +9,7 @@ module.exports = function ( { isProd, isDev } ) {
 
     use: require( 'extract-text-webpack-plugin' ).extract( {
 
-      fallback: 'style-loader',
+      fallback: { loader: 'style-loader', options: { sourceMap: true } },
 
       use: [
 

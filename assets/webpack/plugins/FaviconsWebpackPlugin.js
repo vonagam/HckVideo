@@ -5,7 +5,7 @@ module.exports = function ( { toPath, isProd } ) {
 
   return new ( require( 'favicons-webpack-plugin' ) )( {
 
-    logo: toPath( './source/favicon.png' ),
+    logo: toPath( './source/images/favicon.png' ),
 
     emitStats: true,
 

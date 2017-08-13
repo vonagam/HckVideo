@@ -20,22 +20,8 @@ html lang="en"
 
     = favicon_tags()
 
+    script src="//api-maps.yandex.ru/2.1/?lang=ru-RU"
+
   body
 
-    .container
-
-      header.header
-
-        nav role="navigation"
-
-          ul.nav.nav-pills.pull-right
-
-            li
-
-              a href="http://www.phoenixframework.org/docs" Get Started
-
-        span.logo
-
-      main role="main"
-
-        = render( @view_module, @view_template, assigns )
+    = render( @view_module, @view_template, assigns )

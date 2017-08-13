@@ -2,6 +2,10 @@
 
 <script>
 
-  console.log( <%= { :safe, Poison.encode!( add_json_layout( assigns, @json ) ) } %> )
+  var data = <%= { :safe, Poison.encode!( add_json_layout( assigns, @json ) ) } %>;
+
+  var options = <%= { :safe, Poison.encode!( get_options() ) } %>;
+
+  window.startApplication( "#REACT-ROOT", { data: data, options: options } );
 
 </script>
